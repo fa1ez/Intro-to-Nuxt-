@@ -11,14 +11,14 @@ Nuxt.js is not a server side framework. It runs on the servers. It renders the f
 Difference from other frameworks
 
 1) SEO friendly (power to edit metadata)
-2)   Routing is done automatically. 
-3)   Hot reloading
+2)   Routing is done automatically.
 
 Notes
 1) Dynamic routes can be added using _name tag.
 2)  Directories:- The **pages** directory contains your application's views and routes. The **components** directory is where you put all your Vue.js components which are then imported into your pages. The **assets** directory contains your styles, images, or fonts. The **package**.json file contains all the dependencies and scripts.
 3)  Default Layout is applied to every view
 4)  The <Nuxt/> component must be added when creating a layout to actually include the page component.
+5)  The <Nuxt> component can only be used inside layouts. It gets replaced by whatever is in the **page** components.
 
 
 # Pages template
@@ -73,6 +73,48 @@ mounted () {
 }
 ```
 
+# **Data Fetching**
+
+1) asyncData method (data is rendered before the page gets loaded)
+2) fetch method (data is not made availble, just allows to run code before cliet)
+
+# Meta tags
+
+1) Globally using the nuxt.config.js
+```
+export default {
+  head: {
+    title: 'my website title',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'my website description'
+      }
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+  }
+}
+```
+2) Locally using the head as an object
+```
+<script>
+export default {
+  head: {
+    title: 'Home page',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Home page description'
+      }
+    ],
+  }
+}
+</script>
+```
 
 
 
