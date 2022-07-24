@@ -13,6 +13,14 @@ Difference from other frameworks
 1) SEO friendly (power to edit metadata)
 2)   Routing is done automatically.
 
+# pros of Nuxt
+Faster initial load time: In universal SSR, JavaScript and CSS are split into chunks, assets are optimized, and pages are rendered on the server-side before being served to the client browser. All of these options help make the initial loading time faster.
+
+Better SEO support: Since all pages are rendered on the server side with the appropriate meta content, headings, and paragraphs before being served on the client side, the search engine crawlers can traverse the page to increase the SEO performance of your app.
+
+Better user experience: Universal SSR apps work like traditional SPAs after the initial load in that the transition between pages and routes is seamless. Only data is transmitted back and forth without re-rendering the HTML content holders. All these features have helped to provide a better user experience overall.
+
+
 Notes
 1) Dynamic routes can be added using _name tag.
 2)  Directories:- The **pages** directory contains your application's views and routes. The **components** directory is where you put all your Vue.js components which are then imported into your pages. The **assets** directory contains your styles, images, or fonts. The **package**.json file contains all the dependencies and scripts.
